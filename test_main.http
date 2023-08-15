@@ -1,0 +1,85 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/todos/
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/todos
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Come",
+  "description": "on",
+  "tags": ["first_tag"]
+}
+
+###
+
+POST http://127.0.0.1:8000/people
+Content-Type: application/json
+Accept: application/json
+
+{
+  "first_name": "Yohann",
+  "last_name" : "Fouquer",
+  "assigned_ids": [1]
+}
+
+###
+
+GET http://127.0.0.1:8000/people
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/assign/2/3
+Accept: application/json
+
+
+###
+
+PATCH http://127.0.0.1:8000/todos/5/patch
+Content-Type: application/json
+Accept: application/json
+
+ {
+    "title": "go to ",
+    "description": "Done also",
+    "status": "DONE",
+    "id": 5,
+    "assignee_id": 2,
+   "tags" : [{}]
+ }
+
+###
+
+POST http://127.0.0.1:8000/tags
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "third_tag"
+}
+
+###
+
+GET http://127.0.0.1:8000/tags
+Accept: application/json
+
+###
+
+DELETE http://127.0.0.1:8000/todos/15
+Accept: application/json
+
+###
+
+PUT http://127.0.0.1:8000/people/2/avatar
+Content-Type: multipart/form-data; boundary=boundary
+Accept: application/json
+
+--boundary
+Content-Disposition: form-data; name="avatar_img"; filename="testing_avatar.txt"
+
+###
